@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::namespace('\App\Api\Game\Controllers')->group( function () {
+    Route::get('/game', 'GameController@init');
+    Route::get('/game/{id}', 'GameController@prepareGame');
+});

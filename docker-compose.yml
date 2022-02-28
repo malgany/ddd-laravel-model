@@ -19,6 +19,7 @@ services:
             XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
         volumes:
             - '.:/var/www/html'
+            - './config/php.ini:/etc/php/8.1/cli/php.ini'
         networks:
             - sail
         depends_on:
@@ -45,6 +46,16 @@ services:
 #            test: ["CMD", "mysqladmin", "ping", "-p${DB_PASSWORD}"]
 #            retries: 3
 #            timeout: 5s
+    redis-compose:
+        image: redis
+        command: redis-server --appendonly yes
+        hostname: redis
+        ports:
+            - "6379:6379"
+        volumes:
+            - /home/duducp/Redis:/var/lib/postgresql/data
+        networks:
+            - sail
 networks:
     sail:
         driver: bridge

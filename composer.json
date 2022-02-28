@@ -13,6 +13,7 @@
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
         "myclabs/php-enum": "^1.8",
+        "predis/predis": "^1.1",
         "spatie/data-transfer-object": "^2.8"
     },
     "require-dev": {
@@ -21,7 +22,7 @@
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^5.10",
-        "phpunit/phpunit": "^9.5.10"
+        "phpunit/phpunit": "^9.5"
     },
     "autoload": {
         "psr-4": {
